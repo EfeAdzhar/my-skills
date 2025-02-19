@@ -1,13 +1,6 @@
-from enum import Enum
-from tkinter import *
+from model.entity import *
 
-class User:
-    def __init__(self, name, level, discipline_points, best_progress, worst_progress):
-        self.name = name
-        self.level = level
-        self.discipline_points = discipline_points
-        self.best_progress = best_progress
-        self.worst_progress = worst_progress
+
 
 class Skill:
     def __init__(self, name, skill_type, discipline_points, progress):
@@ -17,12 +10,14 @@ class Skill:
         self.progress = progress
 
 class SkillType(Enum):
-    SKILLS = 1
+    INTELECTUAL  = 1
     PROGRESS = 2
     GRAPH = 3
     USER = 4
 
 class SkillList:
+    skill_list = list()
+
     def __init__(self, skill_list):
         self.skill_list = skill_list
 
@@ -51,3 +46,8 @@ class PlanList:
 
     def remove_plan(self, plan):
         self.plan_list.remove(plan)
+
+
+user = User("Efe", 0, 0, None, None)
+skill = ("Coding", SkillType.INTELECTUAL, None, None)
+
